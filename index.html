@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Decisum Administradora de Condomínios - Soluções completas para a gestão do seu condomínio">
+    <meta name="keywords" content="Administração de Condomínios, Gestão Condominial, Serviços Condominiais, Aplicativo Condomínio, Decisum">
+    <meta name="author" content="Decisum Administradora de Condomínios">
+    <title>Decisum Administradora de Condomínios</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="./imagens/logo/logo_ico.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <img src="./imagens/logo/logo_icon.svg" alt="Logo Ícone" height="40">
+                </div>
+                <h1 class="logo-text">
+                    <img src="./imagens/logo/logo_text.svg" alt="Logo Texto" height="40" style="vertical-align: middle;">
+                </h1>
+            </div>
+            <nav class="nav-links"> <!-- Desktop Navigation -->
+                <ul>
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#services">O que fazemos</a></li>
+                    <li><a href="#about">Sobre nós</a></li>
+                    <li><a href="#app">Nosso aplicativo</a></li>
+                    <li><a href="#contact">Fale conosco</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-button">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu-overlay" class="mobile-menu-overlay">
+            <nav class="mobile-nav-links">
+                <ul>
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#services">O que fazemos</a></li>
+                    <li><a href="#about">Sobre nós</a></li>
+                    <li><a href="#app">Nosso aplicativo</a></li>
+                    <li><a href="#contact">Fale conosco</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-slider">
+        <div class="hero-slides-wrapper">
+            <!-- Slide 1 -->
+            <div class="hero-slide hero-slide-1">
+                <div class="hero-content">
+                    <h1>Administração de condomínios <span>profissional</span></h1>
+                    <p>Soluções completas para a gestão do seu condomínio</p>
+                    <a href="#contact" class="hero-button">Fale Conosco</a>
+                </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="hero-slide hero-slide-2">
+                <div class="hero-content">
+                    <h1>Seu condomínio na <span>palma da mão</span></h1>
+                    <p>Conheça nosso aplicativo exclusivo para moradores e síndicos.</p>
+                    <a href="#app" class="hero-button">Saiba Mais</a>
+                </div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="hero-slide hero-slide-3">
+                <div class="hero-content">
+                    <h1>Transparência e <span>Eficiência</span></h1>
+                    <p>Gestão completa com foco em resultados e satisfação.</p>
+                    <a href="#services" class="hero-button">Nossos Serviços</a>
+                </div>
+            </div>
+        </div>
+        <div class="hero-dots-container">
+            <span class="hero-dot" onclick="currentHeroSlide(0)"></span>
+            <span class="hero-dot" onclick="currentHeroSlide(1)"></span>
+            <span class="hero-dot" onclick="currentHeroSlide(2)"></span>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section section-bg-gray">
+        <div class="container">
+            <h2 class="section-title">Conheça nossos <span>serviços</span></h2>
+            <div class="slideshow-container">
+                <!-- Slide 1: Gestão Financeira -->
+                <div class="service-slide fade">
+                    <img src="imagens/carrossel/contas.jpg" alt="Gestão Financeira">
+                    <div class="slide-content">
+                        <div class="service-icon-wrapper">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h3>Gestão Financeira</h3>
+                        <p>Controle completo das finanças do condomínio, incluindo cobrança de taxas, pagamento de fornecedores e relatórios detalhados.</p>
+                    </div>
+                </div>
+    
+                <!-- Slide 2: Atendimento ao Síndico -->
+                <div class="service-slide fade">
+                    <img src="imagens/carrossel/apertoDeMao.jpg" alt="Atendimento ao Síndico">
+                    <div class="slide-content">
+                        <div class="service-icon-wrapper">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Atendimento ao Síndico</h3>
+                        <p>Suporte especializado para síndicos, auxiliando na tomada de decisões e resolução de questões administrativas.</p>
+                    </div>
+                </div>
+    
+                <!-- Slide 3: Assembleias e Reuniões -->
+                <div class="service-slide fade">
+                    <img src="imagens/carrossel/reuniao.jpg" alt="Assembleias e Reuniões">
+                    <div class="slide-content">
+                        <div class="service-icon-wrapper">
+                            <i class="fas fa-clipboard-check"></i>
+                        </div>
+                        <h3>Assembleias e Reuniões</h3>
+                        <p>Organização e condução de assembleias condominiais, com registro de atas e acompanhamento de deliberações.</p>
+                    </div>
+                </div>
+    
+                <!-- Slide 4: Manutenção Predial -->
+                <div class="service-slide fade">
+                    <img src="imagens/carrossel/pintando.jpg" alt="Manutenção Predial">
+                    <div class="slide-content">
+                        <div class="service-icon-wrapper">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>Manutenção Predial</h3>
+                        <p>Coordenação de serviços de manutenção preventiva e corretiva, com rede de fornecedores qualificados.</p>
+                    </div>
+                </div>
+    
+                <!-- Slide 5: Segurança Patrimonial -->
+                <div class="service-slide fade">
+                    <img src="imagens/carrossel/retrato-guarda-de-seguranca-masculino-com-estacao-de-radio.jpg" alt="Segurança Patrimonial">
+                    <div class="slide-content">
+                        <div class="service-icon-wrapper">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Segurança Patrimonial</h3>
+                        <p>Assessoria na contratação e supervisão de serviços de segurança, portaria e monitoramento eletrônico.</p>
+                    </div>
+                </div>
+    
+                <!-- Slide 6: Consultoria Jurídica -->
+                <div class="service-slide fade">
+                    <img src="imagens/carrossel/advogado-embacado-de-vista-frontal-trabalhando.jpg" alt="Consultoria Jurídica">
+                    <div class="slide-content">
+                        <div class="service-icon-wrapper">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                        </div>
+                        <h3>Consultoria Jurídica</h3>
+                        <p>Apoio jurídico especializado em questões condominiais, incluindo cobrança judicial e mediação de conflitos.</p>
+                    </div>
+                </div>
+    
+                <!-- Navigation Buttons -->
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+    
+            <!-- Dots container -->
+            <div class="dots-container">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+                <span class="dot" onclick="currentSlide(5)"></span>
+                <span class="dot" onclick="currentSlide(6)"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container about-container">
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Condomínio">
+            </div>
+            <div class="about-content">
+                <h2 class="section-title" style="text-align: left; margin-bottom: 1.5rem;">Sobre a <span>Decisum</span></h2>
+                <p>A Decisum Administração de Condomínios é uma empresa especializada na gestão predial e condominial, com mais de 15 anos de experiência no mercado.</p>
+                <p>Nossa missão é oferecer soluções personalizadas para cada condomínio, garantindo eficiência na administração, transparência nas ações e satisfação dos condôminos.</p>
+                <p>Contamos com uma equipe altamente qualificada e comprometida com a excelência nos serviços prestados, utilizando tecnologia de ponta para otimizar todos os processos administrativos.</p>
+                <div class="about-tags">
+                    <div class="about-tag">
+                        <span>+15 anos de experiência</span>
+                    </div>
+                    <div class="about-tag">
+                        <span>Equipe qualificada</span>
+                    </div>
+                    <div class="about-tag">
+                        <span>Tecnologia avançada</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Section -->
+    <section id="app" class="section section-bg-gray">
+        <div class="container">
+            <div class="app-intro">
+                <h2 class="section-title">Apresentando nosso <span>aplicativo</span></h2>
+                <p>Acompanhe tudo sobre o seu condomínio na palma da sua mão. Com o aplicativo Decisum, você acessa informações e serviços de forma rápida, segura e em qualquer plataforma.</p>
+            </div>
+            
+            <div class="app-showcase-container">
+                <div class="app-video-container">
+                    <video controls playsinline class="app-video">
+                        <source src="video/DECISUM_60fps.mp4" type="video/mp4">
+                        Seu navegador não suporta a tag de vídeo.
+                    </video>
+                </div>
+                <ul class="app-features">
+                    <li><i class="fas fa-check-circle"></i> Reserva de áreas comuns</li>
+                    <li><i class="fas fa-check-circle"></i> Segunda via de boletos</li>
+                    <li><i class="fas fa-check-circle"></i> Comunicados e avisos importantes</li>
+                    <li><i class="fas fa-check-circle"></i> Registro de ocorrências com fotos</li>
+                    <li><i class="fas fa-check-circle"></i> Assembleia virtual</li>
+                    <li><i class="fas fa-check-circle"></i> Livro de prestação de contas digital</li>
+                    <li><i class="fas fa-check-circle"></i> Módulo de portaria</li>
+                    <li><i class="fas fa-check-circle"></i> Entre outros...</li>
+                </ul>
+            </div>
+
+            <h3 class="app-download-title">Baixe agora, <span>em qualquer dispositivo</span></h3>
+
+            <div class="app-platforms">
+                <!-- iOS Platform -->
+                <div class="app-platform-card">
+                    <a href="https://apps.apple.com/br/app/decisum-condom%C3%ADnios/id6480421607" class="app-download-button" target="_blank" rel="noopener noreferrer"><i class="fab fa-apple"></i> App Store</a>
+                </div>
+                <!-- Android Platform -->
+                <div class="app-platform-card">
+                    <a href="https://play.google.com/store/apps/details?id=br.com.clientealmahcondos0332&hl=pt-BR&pli=1" class="app-download-button" target="_blank" rel="noopener noreferrer"><i class="fab fa-google-play"></i> Google Play</a>
+                </div>
+                <!-- Web/Desktop Platform -->
+                <div class="app-platform-card">
+                    <a href="https://decisumcondominios.almahcondos.com.br/" class="app-download-button" target="_blank" rel="noopener noreferrer"><i class="fas fa-desktop"></i> Acessar Versão Web</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Solicite seu orçamento  <span>sem compromisso</span></h2>
+            <div class="contact-container">
+                <div class="contact-form">
+                    <div class="contact-form-card">
+                        <h3>Envie sua mensagem</h3>
+                        <form>
+                            <div class="form-group">
+                                <label for="name">Nome</label>
+                                <input type="text" id="name" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">E-mail</label>
+                                <input type="email" id="email" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Telefone</label>
+                                <input type="tel" id="phone" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label for="units">Quantidade de unidades</label>
+                                <input type="number" id="units" class="form-input" min="1">
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Mensagem</label>
+                                <textarea id="message" rows="4" class="form-textarea"></textarea>
+                            </div>
+                            <button type="submit" class="form-button">Enviar Mensagem</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column footer-about">
+                    <h3 class="footer-hidden-title">&nbsp;</h3>
+                    <div class="logo">
+                        <div class="logo-icon">
+                            <img src="./imagens/logo/logo_icon.svg" alt="Logo Ícone" height="50">
+                        </div>
+                        <h1 class="logo-text">
+                            <img src="./imagens/logo/logo_textBranca.svg" alt="Logo Texto" height="50" style="vertical-align: middle;">
+                        </h1>
+                    </div>
+                    <p> A maneira fácil e ágil de administrar seu condomínio.</p>
+                </div>
+                <div class="footer-column footer-location">
+                    <h3>Localização</h3>
+                    <p class="footer-address-line"><i class="fas fa-map-marker-alt"></i>Av. Raul Soares, 96 - Sala 501, Centro, Ubá-MG</p>
+                    <div class="footer-map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3714.869223708942!2d-42.94318852569619!3d-21.39462588033626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xba307a3c3017a5%3A0xe54d62323a7bb918!2sAv.%20Raul%20Soares%2C%2096%20-%20Sala%20501%20-%20Centro%2C%20Ub%C3%A1%20-%20MG%2C%2036500-001!5e0!3m2!1spt-BR!2sbr!4v1716315585694!5m2!1spt-BR!2sbr" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+                <div class="footer-column footer-contact">
+                    <h3>Contato</h3>
+                    <address>
+                        <p><i class="fas fa-phone-alt"></i>(32) 3541-2383 / (32) 3532-5872</p>
+                        <p><i class="fas fa-envelope"></i>gislenegarcia@decisumcondominios.com.br</p>
+                        <p><a href="https://www.instagram.com/decisumadministradora/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i> Instagram</a></p>
+                    </address>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Decisum - Administradora de Condomínios. Todos os direitos reservados.</p>
+                <p class="made-by">Made by <a href="https://www.linkedin.com/in/rafael-costa-a52b83236" target="_blank" rel="noopener noreferrer">Allaska</a> ❤️</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/5532988782382" target="_blank" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
