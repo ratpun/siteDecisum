@@ -15,6 +15,7 @@
     <!-- Header/Navigation -->
     <header class="header">
         <div class="container header-container">
+            <div class="nav-placeholder"></div>
             <div class="logo">
                 <div class="logo-icon">
                     <img src="./imagens/logo/logo_icon.svg" alt="Logo Ícone" height="40">
@@ -32,8 +33,10 @@
                     <li><a href="#contact">Fale conosco</a></li>
                 </ul>
             </nav>
-            <button class="mobile-menu-button">
-                <i class="fas fa-bars"></i>
+            <button class="mobile-menu-button" aria-label="Abrir menu" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </button>
         </div>
         <!-- Mobile Menu Dropdown -->
@@ -183,17 +186,35 @@
     <!-- About Section -->
     <section id="about" class="section">
         <div class="container about-container">
+            <h2 class="section-title">Sobre a <span>Decisum</span></h2>
             <div class="about-image">
-                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Condomínio">
+                <img src="imagens/equipe/fundo.png" alt="Fundo com prédios" class="about-bg-image">
+                
+                <!-- Heloísa (left) -->
+                <div class="person-wrapper person-wrapper-left">
+                    <img src="imagens/equipe/fotoSociasPredios (2).png" alt="Sócia Heloísa Helena" class="person-img">
+                    <div class="tooltip tooltip-left">
+                        <p class="tooltip-name">Heloísa Helena</p>
+                        <p class="tooltip-title">Sócia, Engenheira Civil</p>
+                    </div>
+                </div>
+    
+                <!-- Gislene (right) -->
+                <div class="person-wrapper person-wrapper-right">
+                    <img src="imagens/equipe/fotoSociasPredios (1).png" alt="Sócia Gislene Garcia" class="person-img">
+                    <div class="tooltip tooltip-right">
+                        <p class="tooltip-name">Gislene Garcia</p>
+                        <p class="tooltip-title">Sócia, Advogada</p>
+                    </div>
+                </div>
             </div>
             <div class="about-content">
-                <h2 class="section-title" style="text-align: left; margin-bottom: 1.5rem;">Sobre a <span>Decisum</span></h2>
-                <p>A Decisum Administração de Condomínios é uma empresa especializada na gestão predial e condominial, com mais de 15 anos de experiência no mercado.</p>
+                <p>A Decisum Administração de Condomínios é uma empresa especializada na gestão predial e condominial, com mais de 18 anos de experiência no mercado.</p>
                 <p>Nossa missão é oferecer soluções personalizadas para cada condomínio, garantindo eficiência na administração, transparência nas ações e satisfação dos condôminos.</p>
                 <p>Contamos com uma equipe altamente qualificada e comprometida com a excelência nos serviços prestados, utilizando tecnologia de ponta para otimizar todos os processos administrativos.</p>
                 <div class="about-tags">
                     <div class="about-tag">
-                        <span>+15 anos de experiência</span>
+                        <span>+18 anos de experiência</span>
                     </div>
                     <div class="about-tag">
                         <span>Equipe qualificada</span>
@@ -217,7 +238,7 @@
             <div class="app-showcase-container">
                 <div class="app-video-container">
                     <video controls playsinline class="app-video">
-                        <source src="video/DECISUM_60fps.mp4" type="video/mp4">
+                        <source src="video/DECISUM_60fps (1).mp4" type="video/mp4">
                         Seu navegador não suporta a tag de vídeo.
                     </video>
                 </div>
@@ -237,18 +258,34 @@
 
             <div class="app-platforms">
                 <!-- iOS Platform -->
-                <div class="app-platform-card">
-                    <a href="https://apps.apple.com/br/app/decisum-condom%C3%ADnios/id6480421607" class="app-download-button" target="_blank" rel="noopener noreferrer"><i class="fab fa-apple"></i> App Store</a>
-                </div>
+                <a href="https://apps.apple.com/br/app/decisum-condom%C3%ADnios/id6480421607" class="app-download-button btn-12" target="_blank" rel="noopener noreferrer">
+                    <span><i class="fab fa-apple"></i> Baixar</span>
+                    <span><i class="fab fa-apple"></i> App Store</span>
+                </a>
                 <!-- Android Platform -->
-                <div class="app-platform-card">
-                    <a href="https://play.google.com/store/apps/details?id=br.com.clientealmahcondos0332&hl=pt-BR&pli=1" class="app-download-button" target="_blank" rel="noopener noreferrer"><i class="fab fa-google-play"></i> Google Play</a>
-                </div>
+                <a href="https://play.google.com/store/apps/details?id=br.com.clientealmahcondos0332&hl=pt-BR&pli=1" class="app-download-button btn-12" target="_blank" rel="noopener noreferrer">
+                    <span><i class="fab fa-google-play"></i> Baixar</span>
+                    <span><i class="fab fa-google-play"></i> Google Play</span>
+                </a>
                 <!-- Web/Desktop Platform -->
-                <div class="app-platform-card">
-                    <a href="https://decisumcondominios.almahcondos.com.br/" class="app-download-button" target="_blank" rel="noopener noreferrer"><i class="fas fa-desktop"></i> Acessar Versão Web</a>
+                <a href="https://decisumcondominios.almahcondos.com.br/" class="app-download-button btn-12" target="_blank" rel="noopener noreferrer">
+                    <span><i class="fas fa-desktop"></i> Acessar</span>
+                    <span><i class="fas fa-desktop"></i> Versão Web</span>
+                </a>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Como realizar o primeiro acesso no aplicativo?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Para o seu primeiro acesso, utilize o e-mail cadastrado na administradora como login. A senha inicial é o número do seu CPF (apenas dígitos). Recomendamos que você altere sua senha após o primeiro login para maior segurança.</p>
+                    </div>
                 </div>
             </div>
+
         </div>
     </section>
 
@@ -260,29 +297,30 @@
                 <div class="contact-form">
                     <div class="contact-form-card">
                         <h3>Envie sua mensagem</h3>
-                        <form>
+                        <form method="POST" action="send_email.php" id="contact-form">
                             <div class="form-group">
                                 <label for="name">Nome</label>
-                                <input type="text" id="name" class="form-input">
+                                <input type="text" id="name" name="name" class="form-input" required>
                             </div>
                             <div class="form-group">
                                 <label for="email">E-mail</label>
-                                <input type="email" id="email" class="form-input">
+                                <input type="email" id="email" name="email" class="form-input" required>
                             </div>
                             <div class="form-group">
                                 <label for="phone">Telefone</label>
-                                <input type="tel" id="phone" class="form-input">
+                                <input type="tel" id="phone" name="phone" class="form-input" maxlength="15" placeholder="(XX) XXXXX-XXXX" required>
                             </div>
                             <div class="form-group">
                                 <label for="units">Quantidade de unidades</label>
-                                <input type="number" id="units" class="form-input" min="1">
+                                <input type="number" id="units" name="units" class="form-input" min="1" required>
                             </div>
                             <div class="form-group">
                                 <label for="message">Mensagem</label>
-                                <textarea id="message" rows="4" class="form-textarea"></textarea>
+                                <textarea id="message" name="message" rows="4" class="form-textarea" required></textarea>
                             </div>
-                            <button type="submit" class="form-button">Enviar Mensagem</button>
+                            <button type="submit" id="form-submit-button" class="form-button"></button>
                         </form>
+                        <div id="form-status" class="form-status"></div>
                     </div>
                 </div>
             </div>
@@ -317,20 +355,26 @@
                     <address>
                         <p><i class="fas fa-phone-alt"></i>(32) 3541-2383 / (32) 3532-5872</p>
                         <p><i class="fas fa-envelope"></i>gislenegarcia@decisumcondominios.com.br</p>
-                        <p><a href="https://www.instagram.com/decisumadministradora/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i> Instagram</a></p>
+                        <p><a href="https://www.instagram.com/decisumcondominios" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i> Instagram</a></p>
                     </address>
                 </div>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2025 Decisum - Administradora de Condomínios. Todos os direitos reservados.</p>
-                <p class="made-by">Made by <a href="https://www.linkedin.com/in/rafael-costa-a52b83236" target="_blank" rel="noopener noreferrer">Allaska</a> ❤️</p>
+                <p class="made-by">Made by <a href="https://github.com/ratpun" target="_blank" rel="noopener noreferrer">Allaska</a> ®️</p>
             </div>
         </div>
     </footer>
 
     <!-- WhatsApp Float Button -->
-    <a href="https://wa.me/5532988782382" target="_blank" class="whatsapp-float">
+    <a href="https://wa.me/5532988782382?text=Ol%C3%A1%2C%20cheguei%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20solicitar%20atendimento." target="_blank" class="whatsapp-float">
+        <div class="whatsapp-popup">
+            Olá! Estamos online.
+        </div>
         <i class="fab fa-whatsapp"></i>
+        <span class="wave"></span>
+        <span class="wave"></span>
+        <span class="wave"></span>
     </a>
 
     <script src="script.js"></script>
