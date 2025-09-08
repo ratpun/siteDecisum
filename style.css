@@ -1,4 +1,3 @@
-/* General Body & Reset Styles */
 :root {
     --primary-color: #C50208;
     --gray-50: #f9fafb;
@@ -44,7 +43,11 @@ ul {
     padding-right: 1rem;
 }
 
-/* Header */
+.text-primary {
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
 .header {
     background-color: var(--white);
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
@@ -69,20 +72,20 @@ ul {
 }
 
 .logo-icon {
-    width: 3rem;
-    height: 3rem;
+    width: 3.5rem;
+    height: 3.5rem;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--white);
     font-weight: bold;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     vertical-align: middle;
 }
 
 .logo-text {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     font-weight: bold;
     color: var(--gray-800);
     display: flex;
@@ -124,8 +127,8 @@ ul {
     position: absolute;
     bottom: 0;
     left: 50%;
-    transform: translateX(-50%) scaleX(0); /* Start scaled to 0 */
-    transform-origin: center center; /* Animate from center */
+    transform: translateX(-50%) scaleX(0);
+    transform-origin: center center;
     width: 100%;
     height: 2px;
     background: var(--primary-color);
@@ -133,7 +136,7 @@ ul {
 }
 
 .nav-links a.active::after {
-    transform: translateX(-50%) scaleX(1); /* Scale to full width */
+    transform: translateX(-50%) scaleX(1);
 }
 
 .nav-placeholder {
@@ -142,7 +145,7 @@ ul {
 }
 
 .header.header--menu-open .nav-placeholder {
-    width: 28px; /* Match mobile-menu-button width */
+    width: 28px;
 }
 
 .mobile-menu-button {
@@ -186,10 +189,9 @@ ul {
 }
 
 
-/* Mobile Menu Overlay */
 .mobile-menu-overlay {
-    position: absolute; /* Stick to the header, not the viewport */
-    top: 100%; /* Start right below the header */
+    position: absolute;
+    top: 100%;
     left: 0;
     width: 100%;
     background-color: var(--white);
@@ -201,11 +203,11 @@ ul {
 }
 
 .mobile-menu-overlay.visible {
-    max-height: 100vh; /* A large value to ensure it can contain all links */
+    max-height: 100vh;
 }
 
 .mobile-nav-links {
-    padding: 3rem 0rem; /* Spacing for the links inside */
+    padding: 1rem 0rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -217,13 +219,13 @@ ul {
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.5rem;
     text-align: center;
     width: 100%;
 }
 
 .mobile-nav-links a {
-    font-size: 1.75rem;
+    font-size: 1.4rem;
     color: var(--gray-800);
     font-weight: 500;
     text-decoration: none;
@@ -242,7 +244,6 @@ ul {
     background-color: rgba(0, 0, 0, 0.05);
 }
 
-/* Hero Section - Slider */
 .hero-slider {
     position: relative;
     width: 100%;
@@ -252,14 +253,14 @@ ul {
 
 .hero-slides-wrapper {
     display: flex;
-    width: 300%; /* 100% for each of the 3 slides */
+    width: 300%;
     height: 100%;
     transition: transform 0.8s ease-in-out;
 }
 
 .hero-slide {
     position: relative;
-    width: 100%; /* This will be 1/3 of the wrapper width */
+    width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
@@ -267,7 +268,7 @@ ul {
     color: var(--white);
     text-align: center;
     padding: 0 1rem;
-    overflow: hidden; /* Ensure blurred edges don't leak */
+    overflow: hidden;
 }
 
 .hero-slide::before {
@@ -279,12 +280,11 @@ ul {
     bottom: 0;
     background-size: cover;
     background-position: center;
-    filter: blur(4px); /* Blur effect */
-    transform: scale(1.05); /* Prevents hard edges from blur */
+    filter: blur(4px);
+    transform: scale(1.05);
     z-index: -1;
 }
 
-/* Slide specific backgrounds applied to the pseudo-element */
 .hero-slide-1::before {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1473&q=80');
 }
@@ -308,7 +308,7 @@ ul {
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    color: var(--primary-color); /* Fallback */
+    color: var(--primary-color);
     background-size: 200% 200%;
     animation: gradient-move 8s linear infinite;
 }
@@ -360,7 +360,6 @@ ul {
     background-color: var(--white);
 }
 
-/* Sections General */
 .section {
     padding: 4rem 0;
 }
@@ -381,7 +380,6 @@ ul {
     color: var(--primary-color);
 }
 
-/* Services Section - Slideshow */
 .slideshow-container {
     max-width: 900px;
     position: relative;
@@ -506,7 +504,6 @@ ul {
     100% { background-position: 0% 100%; }
 }
 
-/* About Section */
 .about-container {
     display: flex;
     flex-direction: column;
@@ -514,7 +511,7 @@ ul {
 }
 
 .about-container > .section-title {
-    order: 1; /* Title first on mobile */
+    order: 1;
     margin-bottom: 2rem;
 }
 
@@ -528,7 +525,7 @@ ul {
     transform: translateY(30px);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
     overflow: hidden;
-    order: 2; /* Image second on mobile */
+    order: 2;
 }
 
 .about-image.is-visible {
@@ -577,7 +574,7 @@ ul {
 }
 
 .about-content {
-    order: 3; /* Content last on mobile */
+    order: 3;
     text-align: center;
     width: 100%;
     margin-top: 2rem;
@@ -606,6 +603,7 @@ ul {
     border-radius: 9999px;
     color: var(--primary-color);
     font-weight: 500;
+    text-align: center;
 }
 
 .tooltip {
@@ -631,13 +629,13 @@ ul {
 }
 
 .tooltip-left {
-    top: 50%;
-    left: 75%;
+    top: 70%;
+    left: 10%;
 }
 
 .tooltip-right {
-    top: 50%;
-    right: 75%;
+    top: 60%;
+    right: 20%;
 }
 
 .tooltip-name {
@@ -652,8 +650,6 @@ ul {
     color: var(--gray-600);
 }
 
-
-/* App Section */
 .app-intro {
     text-align: center;
     max-width: 800px;
@@ -738,12 +734,11 @@ ul {
     grid-column: 1 / -1;
 }
 
-/* App Download Button New Animation */
 .app-download-button.btn-12 {
     position: relative;
     border: none;
     box-shadow: none;
-    width: 160px; /* Adjusted width for content */
+    width: 160px;
     height: 45px;
     line-height: 45px;
     -webkit-perspective: 230px;
@@ -816,7 +811,6 @@ ul {
     transform: rotateX(-90deg);
 }
 
-/* FAQ Section in App */
 .faq-container {
     margin-top: 3rem;
     max-width: 800px;
@@ -863,12 +857,52 @@ ul {
     background-color: var(--gray-50);
 }
 
-.faq-answer p {
+.faq-form-wrapper {
     padding: 1.5rem;
-    color: var(--gray-600);
 }
 
-/* Contact Section */
+.faq-form-wrapper p {
+    color: var(--gray-600);
+    margin-bottom: 1.5rem;
+    padding: 0;
+    text-align: center;
+}
+
+.faq-form .form-group {
+    margin-bottom: 1rem;
+}
+
+.faq-form .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--gray-700);
+    font-size: 0.9rem;
+}
+
+.faq-form-button {
+    outline: none;
+    height: 40px;
+    text-align: center;
+    padding: 0 25px;
+    border-radius: 40px;
+    background: #fff;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    letter-spacing: 1px;
+    text-shadow: 0;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    display: block;
+    margin: 1.5rem auto 0;
+}
+
+.faq-form-button:hover {
+    color: white;
+    background: var(--primary-color);
+}
+
 .contact-container {
     display: flex;
     justify-content: center;
@@ -993,7 +1027,7 @@ ul {
 .form-button.validate::after {
     font-family: 'Font Awesome 6 Free';
     font-weight: 900;
-    content: "\f00c";
+    content: "\\f00c";
 }
 
 .form-status {
@@ -1003,7 +1037,7 @@ ul {
 }
 
 .form-status.success {
-    color: #155724; /* Dark Green */
+    color: #155724;
     background-color: #d4edda;
     border: 1px solid #c3e6cb;
     padding: 0.75rem 1.25rem;
@@ -1011,14 +1045,13 @@ ul {
 }
 
 .form-status.error {
-    color: #721c24; /* Dark Red */
+    color: #721c24;
     background-color: #f8d7da;
     border: 1px solid #f5c6cb;
     padding: 0.75rem 1.25rem;
     border-radius: 0.5rem;
 }
 
-/* Footer */
 .footer {
     background-color: var(--gray-800);
     color: var(--white);
@@ -1126,7 +1159,6 @@ ul {
     color: var(--white);
 }
 
-/* WhatsApp Float Button */
 .whatsapp-float {
     position: fixed;
     width: 60px;
@@ -1207,7 +1239,7 @@ ul {
     z-index: -1;
     pointer-events: none;
     animation-name: pulse-wave;
-    animation-duration: 8s; /* Total cycle duration is 8 seconds */
+    animation-duration: 8s;
     animation-iteration-count: infinite;
     animation-timing-function: ease-out;
     opacity: 0;
@@ -1240,11 +1272,11 @@ ul {
         transform: scale(0.9);
         opacity: 1;
     }
-    25% { /* Visual effect lasts for 25% of the 8s duration (2s) */
+    25% {
         transform: scale(2.5);
         opacity: 0;
     }
-    100% { /* The rest of the time it stays invisible */
+    100% {
         transform: scale(2.5);
         opacity: 0;
     }
@@ -1261,7 +1293,6 @@ ul {
     }
 }
 
-/* Responsive Styles */
 @media (min-width: 768px) {
     .header-container {
         justify-content: space-between;
@@ -1322,9 +1353,9 @@ ul {
         grid-template-areas:
             "image title"
             "image content";
-        gap: 0 3rem; /* row-gap column-gap */
+        gap: 0 3rem;
         align-items: start;
-        flex-direction: initial; /* Reset from mobile */
+        flex-direction: initial;
     }
 
     .about-container > .section-title {

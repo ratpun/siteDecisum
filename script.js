@@ -1,19 +1,16 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Mobile Menu Logic
     const header = document.querySelector('.header');
     const menuButton = document.querySelector('.mobile-menu-button');
     const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
     const mobileLinks = document.querySelectorAll('.mobile-nav-links a');
 
     if (menuButton && mobileMenuOverlay) {
-        // Toggle menu
         menuButton.addEventListener('click', function() {
             this.classList.toggle('open');
             mobileMenuOverlay.classList.toggle('visible');
             header.classList.toggle('header--menu-open');
         });
 
-        // Handle link clicks in mobile menu
         mobileLinks.forEach(link => {
             link.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -21,15 +18,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 const targetHref = self.getAttribute('href');
                 const targetElement = document.querySelector(targetHref);
 
-                // Add flash effect
                 self.classList.add('flash-active');
 
-                // Close the menu
                 mobileMenuOverlay.classList.remove('visible');
                 header.classList.remove('header--menu-open');
-                menuButton.classList.remove('open'); // Revert button to hamburger
+                menuButton.classList.remove('open');
 
-                // After a short delay to see the flash and let menu close, scroll to section
                 setTimeout(() => {
                     self.classList.remove('flash-active');
                     if (targetElement) {
@@ -42,7 +36,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Smooth scrolling for non-mobile anchor links
     document.querySelectorAll('a[href^="#"]:not(.mobile-nav-links a)').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -56,7 +49,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // HERO SLIDER SCRIPT
     const heroSlider = document.querySelector('.hero-slider');
     const heroSlidesWrapper = document.querySelector('.hero-slides-wrapper');
     const heroDots = document.querySelectorAll('.hero-dot');
@@ -107,46 +99,41 @@ document.addEventListener('DOMContentLoaded', function() {
         showHeroSlide(0);
         startHeroSlider();
 
-        // Touch Swipe Logic
         let touchStartX = 0;
         let touchEndX = 0;
 
         heroSlider.addEventListener('touchstart', e => {
             touchStartX = e.changedTouches[0].screenX;
-            stopHeroSlider(); // Pause slider on touch
+            stopHeroSlider();
         }, { passive: true });
 
         heroSlider.addEventListener('touchend', e => {
             touchEndX = e.changedTouches[0].screenX;
             handleSwipe();
-            startHeroSlider(); // Resume slider after touch
+            startHeroSlider();
         }, { passive: true });
 
         function handleSwipe() {
-            const swipeThreshold = 50; // Minimum distance for a swipe in pixels
+            const swipeThreshold = 50;
             if (touchStartX - touchEndX > swipeThreshold) {
-                // Swiped left
                 nextHeroSlide();
             } else if (touchEndX - touchStartX > swipeThreshold) {
-                // Swiped right
                 prevHeroSlide();
             }
         }
     }
 
-    // Initialize services slideshow
     showSlides(slideIndex);
 
-    // Navigation active state on scroll with Intersection Observer
     const sections = document.querySelectorAll('section[id]');
     const allNavLinks = document.querySelectorAll('.nav-links a, .mobile-nav-links a');
     const headerEl = document.querySelector('.header');
-    const headerHeight = headerEl ? headerEl.offsetHeight : 70; // Fallback height
+    const headerHeight = headerEl ? headerEl.offsetHeight : 70;
 
     const observerOptions = {
-        root: null, // relative to the viewport
-        rootMargin: `-${headerHeight}px 0px 0px 0px`, // offset from the top to account for sticky header
-        threshold: 0.3 // trigger when 30% of the section is visible
+        root: null,
+        rootMargin: `-${headerHeight}px 0px 0px 0px`,
+        threshold: 0.3
     };
 
     const sectionObserver = new IntersectionObserver((entries, observer) => {
@@ -168,7 +155,6 @@ document.addEventListener('DOMContentLoaded', function() {
         sectionObserver.observe(section);
     });
 
-    // Animation on scroll for the about image
     const aboutImage = document.querySelector('.about-image');
     if (aboutImage) {
         const revealObserver = new IntersectionObserver((entries, observer) => {
@@ -178,11 +164,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     observer.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.2 }); // Trigger when 20% of the element is visible
+        }, { threshold: 0.2 });
         revealObserver.observe(aboutImage);
     }
 
-    // Phone Mask Logic
     const phoneInput = document.getElementById('phone');
     if (phoneInput) {
         phoneInput.addEventListener('input', (e) => {
@@ -204,7 +189,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Contact Form AJAX Submission
     const contactForm = document.getElementById('contact-form');
     const formStatus = document.getElementById('form-status');
     const submitButton = document.getElementById('form-submit-button');
@@ -213,13 +197,12 @@ document.addEventListener('DOMContentLoaded', function() {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Prevent multiple submissions
             if (submitButton.disabled) return;
 
             submitButton.disabled = true;
-            submitButton.classList.remove('validate'); // Reset from previous success
+            submitButton.classList.remove('validate');
             submitButton.classList.add('onclic');
-            formStatus.innerHTML = ''; // Clear previous status
+            formStatus.innerHTML = '';
             formStatus.className = 'form-status';
 
             const formData = new FormData(this);
@@ -238,7 +221,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     contactForm.reset();
                     submitButton.classList.add('validate');
 
-                    // Re-enable button after success animation is visible for a bit
                     setTimeout(() => {
                         submitButton.classList.remove('validate');
                         submitButton.disabled = false;
@@ -252,19 +234,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 submitButton.classList.remove('onclic');
                 formStatus.innerHTML = error.message || 'Oops! Algo deu errado. Tente novamente mais tarde.';
                 formStatus.classList.add('error');
-                submitButton.disabled = false; // Re-enable immediately on error
+                submitButton.disabled = false;
             })
             .finally(() => {
-                // This just clears the status message after a while
                 setTimeout(() => {
                     formStatus.innerHTML = '';
                     formStatus.className = 'form-status';
-                }, 6000); // Clear message after 6 seconds
+                }, 6000);
             });
         });
     }
 
-    // FAQ Dropdown Logic
     const faqQuestions = document.querySelectorAll('.faq-question');
     faqQuestions.forEach(button => {
         button.addEventListener('click', () => {
@@ -277,9 +257,33 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    const faqAccessForm = document.getElementById('faq-access-form');
+    if (faqAccessForm) {
+        faqAccessForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const condoName = document.getElementById('faq-condo-name').value.trim();
+            const residentName = document.getElementById('faq-resident-name').value.trim();
+            const unitNumber = document.getElementById('faq-unit-number').value.trim();
+            const email = document.getElementById('faq-email').value.trim();
+
+            if (!condoName || !residentName || !unitNumber || !email) {
+                alert('Por favor, preencha todos os campos para solicitar o acesso.');
+                return;
+            }
+
+            const message = `Olá, gostaria de realizar meu primeiro acesso ao aplicativo. Minhas informações são:\n\n*Condomínio:* ${condoName}\n*Nome:* ${residentName}\n*Unidade:* ${unitNumber}\n*E-mail:* ${email}`;
+
+            const whatsappNumber = '5532988782382';
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+            window.open(whatsappUrl, '_blank');
+        });
+    }
 });
 
-// Services Slideshow Script
 let slideIndex = 1;
 let slideTimer;
 
